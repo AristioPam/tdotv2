@@ -17,11 +17,11 @@ export default function HeroScene() {
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     if (meshRef.current) {
-      meshRef.current.rotation.x = t * 0.2;
-      meshRef.current.rotation.y = t * 0.3;
+      meshRef.current.rotation.x = t * 0.15;
+      meshRef.current.rotation.y = t * 0.2;
     }
     if (groupRef.current) {
-      groupRef.current.rotation.y = t * 0.1;
+      groupRef.current.rotation.y = t * 0.05;
     }
   });
 
@@ -29,28 +29,20 @@ export default function HeroScene() {
     <>
       <PerspectiveCamera makeDefault position={[0, 0, 8]} />
 
-      <ambientLight intensity={0.4} />
-      <directionalLight position={[5, 5, 5]} intensity={1} color="#ffb7b2" />
-      <spotLight
-        position={[-5, 5, 5]}
-        angle={0.3}
-        penumbra={1}
-        intensity={2}
-        color="#c7ceea"
-        castShadow
-      />
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[5, 5, 5]} intensity={1} />
+      <pointLight position={[-5, 3, 3]} intensity={0.8} />
 
-      <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
+      <Float speed={1} rotationIntensity={0.1} floatIntensity={0.3}>
         <mesh ref={meshRef} position={[0, 0, 0]}>
-          <sphereGeometry args={[1.8, 64, 64]} />
+          {/* turunin segment biar ga brutal */}
+          <sphereGeometry args={[1.8, 32, 32]} />
           <MeshDistortMaterial
             color="#dd95fc"
-            attach="material"
-            distort={0.4}
-            speed={2}
-            roughness={0.2}
+            distort={0.35}
+            speed={1.2}
+            roughness={0.3}
             metalness={0.1}
-            transmission={0.5}
           />
         </mesh>
       </Float>
@@ -67,20 +59,13 @@ export default function HeroScene() {
         </mesh>
 
         <mesh position={[0, 2.5, -1]}>
-          <torusGeometry args={[0.3, 0.1, 16, 32]} />
+          {/* turunin segment */}
+          <torusGeometry args={[0.3, 0.1, 8, 16]} />
           <meshStandardMaterial color="#c7ceea" transparent opacity={0.8} />
         </mesh>
       </group>
 
-      <Stars
-        radius={100}
-        depth={50}
-        count={1000}
-        factor={4}
-        saturation={0}
-        fade
-        speed={1}
-      />
+      <Stars radius={80} depth={30} count={300} factor={3} fade speed={0.5} />
     </>
   );
 }
