@@ -22,6 +22,6 @@ Saya mengerjakan antarmuka modern yang responsif, rapi, dan mudah dipahami.
 - Visual & Typography System  
 
 ## Contact
-LinkedIn: https://linkedin.com/in/yourprofile  
-Email: your@email.com  
-GitHub: https://github.com/yourusername
+LinkedIn: https://linkedin.com/in/aristiopamungkas
+Email: aristiov@gmail.com
+GitHub: https://github.com/AristioPam
