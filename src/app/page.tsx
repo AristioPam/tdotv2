@@ -5,10 +5,11 @@ import CanvasWrapper from "@/components/CanvasWrapper";
 import { motion } from "framer-motion";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import Image from "next/image";
-
+import Snowfall from "react-snowfall";
 export default function Home() {
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-between p-6 md:p-24 overflow-hidden">
+<Snowfall color="white"/>
       <CanvasWrapper />
 
       <section className="z-10 w-full max-w-5xl flex flex-col items-start justify-center h-[70vh] md:h-[80vh] pointer-events-none px-4 md:px-0">
