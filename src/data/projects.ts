@@ -37,7 +37,7 @@ export const projects: Project[] = [
   },
   {
     id: 5,
-    title: "Lelenjir Peringatan Banjir(Under Development)",
+    title: "Lelenjir Peringatan Banjir",
     category: "Next.js, Golang, PostgreSQL",
     image: "/lelenj.png",
     url: "https://lelenjir.vercel.app/",
